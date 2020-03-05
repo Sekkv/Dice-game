@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Form styling</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        /* 
+        - box-sizing property-г border-box утгатайгаар бичиж өг
+        - margin болон padding-ийг reset хий
+       */
+      }
+
+      body {
+        /* 
+        Дэвсгэр өнгийг #344a72-оор тавь
+        */
+        background: #344a72;
+      }
+
+      a {
+        /* 
+        доогуур зураас (underline) муухай харагддаг учир түүнийг зайлуулаарай
+       */
+      }
+
+      #container {
+        /* 
+        - margin-auto нь хоёр талаасаа ижил зай авч block элементийг голлуулдгийг битгий мартаарай
+        илүү 
+        - илүү responsive болгохын тулд max-width тавьж өгөөрэй
+        - бага зэрэг padding хийгээрэй
+        */
+        margin: auto;
+        max-width: 500px;
+        padding: 30px 100px;
+      }
+
+      .form-wrap {
+        /* 
+          энэ нь формын гадуурх цагаан талбарыг хийж өгнө
+        */
+        background: white;
+      }
+
+      .form-wrap h1 {
+        text-align: center;
+      }
+      .form-wrap p {
+        /* 
+          голлуулах хэрэгтэй
+        */
+        text-align: center;
+      }
+
+      .form-wrap .form-group {
+        /* 
+          бүх гарчиг, input нь .form-group гэсэн класс-аар хүрээлэгдсэн байна
+        */
+      }
+
+      .form-wrap .form-group label {
+        /* 
+          гарчигуудыг block элемент болгоорой
+        */
+        display: block;
+      }
+
+      .form-wrap .form-group input {
+        /* 
+          утга оруулах талбар мөрийг бүхэлд нь эзэлсэн урт байх хэрэгтэй. бага зэрэг padding нэмж өгөөрэй.
+        */
+        width: 95%;
+        margin: 20px;
+      }
+
+      .form-wrap button {
+        /* 
+          товчлуур мөн 100 хувь өргөнтэй байх хэрэгтэй. block элемент болго. 
+          товчлуурын өнгийг #49c1a2 кодоор өг
+        */
+      }
+
+      .form-wrap button:hover {
+        /* 
+          товчлуур дээр хулганын заагч очиход өөрчлөгдөх өнгийг  #37a08e кодоор хийж өг.
+        */
+      }
+
+      .form-wrap .bottom-text {
+        /* 
+          доод талын текстийг жижигрүүл
+        */
+      }
+
+      footer {
+        /* 
+        голлуулаарай
+       */
+      }
+
+      footer a {
+        /* 
+          footer-ийн өнгийг #49c1a2 кодоор хийж өг
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="form-wrap">
+        <h1>Бүртгүүлэх</h1>
+        <p>Бүртгэл үнэ төлбөргүй</p>
+        <form>
+          <div class="form-group">
+            <label for="first-name">Таны нэр</label>
+            <input type="text" name="firstName" id="first-name" />
+          </div>
+          <div class="form-group">
+            <label for="last-name">Таны овог</label>
+            <input type="text" name="lastName" id="last-name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Таны и-мэйл</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Нууц үгээ бичнэ үү</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div class="form-group">
+            <label for="password2">Нууц үгээ давтан бичнэ үү</label>
+            <input type="password" name="pasword2" id="password2" />
+          </div>
+          <button type="submit" class="btn">Бүртгүүлэх</button>
+          <p class="bottom-text">
+            Бүртгүүлэх товчлуурыг дарснаар та манай
+            <a href="#">Гэрээний нөхцлүүд</a>-ийг зөвшөөрсөн болно.
+          </p>
+        </form>
+      </div>
+      <footer>
+        <p>Өмнө бүртгүүлсэн бол <a href="#">Нэвтрэх</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
