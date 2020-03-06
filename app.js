@@ -60,3 +60,29 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     diceDom.style.display = "none";
   }
 });
+
+// button hold click
+document.querySelector(".btn-hold").addEventListener("click", function() {
+  scores[activePlayer] = scores[activePlayer] + roundScore;
+
+  // hojson esehioig shalgah
+  if (scores[activePlayer] >= 100) {
+    document.getElementById("name-" + activePlayer).textContent = "WINNER";
+  }
+  document.getElementById("score-" + activePlayer).textContent =
+    scores[activePlayer];
+
+  // ene toglogchiin eeljin deer tsugluulsanonoog 0 bolgono
+  document.getElementById("current-" + activePlayer).textContent = 0;
+  roundScore = 0;
+
+  // toglogchiin eeljiig solino
+  activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+
+  // ene bas ulaan tsegig shiljuuleh
+  document.querySelector(".player-0-panel").classList.toggle("active");
+  document.querySelector(".player-1-panel").classList.toggle("active");
+
+  // Shoog tur alga bolgono
+  diceDom.style.display = "none";
+});
