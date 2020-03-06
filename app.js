@@ -7,26 +7,26 @@ var scores;
 // toglogchiin eeljin deer tsugluulj bga onoog hadgaldag huwisagch
 var roundScore;
 var diceDom = document.querySelector(".dice");
-  initGame();
-  function initGame() {
-    // togloom ehelle gedeg tuluwt oruulna
-    isNewGame = true;
-    activePlayer = 0;
-    scores = [0, 0];
-    roundScore = 0;
-    document.getElementById("score-0").textContent = "0";
-    document.getElementById("score-1").textContent = "0";
-    //document.querySelector("#score-1").innerHTML = "<em>Yes!</em>";
-    document.getElementById("current-0").textContent = "0";
-    document.getElementById("current-1").textContent = "0";
-  
-    // shoonii zurgiig web deer gargaj irehgui
-    diceDom.style.display = "none";
-  }
+initGame();
+function initGame() {
+  // togloom ehelle gedeg tuluwt oruulna
+  isNewGame = true;
+  activePlayer = 0;
+  scores = [0, 0];
+  roundScore = 0;
+  document.getElementById("score-0").textContent = "0";
+  document.getElementById("score-1").textContent = "0";
+  //document.querySelector("#score-1").innerHTML = "<em>Yes!</em>";
+  document.getElementById("current-0").textContent = "0";
+  document.getElementById("current-1").textContent = "0";
+
+  // shoonii zurgiig web deer gargaj irehgui
+  diceDom.style.display = "none";
+}
 
 // Shoog shideh event listner
 document.querySelector(".btn-roll").addEventListener("click", function() {
-  if(isNewGame){
+  if (isNewGame) {
     // 1 - 6 dotorh sanamsargui neg too gargaj awna
     var diceNumber = Math.floor(Math.random() * 6) + 1;
 
@@ -40,51 +40,59 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     if (diceNumber !== 1) {
       // 1-ees ylgaatai too buulaa . buusan toog toglogchid nemj ogno
       roundScore = roundScore + diceNumber;
-      document.getElementById("current-" + activePlayer).textContent = roundScore;
+      document.getElementById(
+        "current-" + activePlayer
+      ).textContent = roundScore;
     } else {
       // 1 buusan tul toglogchiin eeljiig ene hesegt solij ogno.
       toglogchiinEeljiigSolih();
     }
-  }else{
+  } else {
     alert("Тоглоом дууссан байна. NEW GAME товчийг дарж шинээр эхлэнэ үү!!");
   }
 });
 
 // button hold click
 document.querySelector(".btn-hold").addEventListener("click", function() {
-  if(isNewGame){
+  if (isNewGame) {
     scores[activePlayer] = scores[activePlayer] + roundScore;
     // hojson esehioig shalgah
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       isNewGame = false;
       document.getElementById("name-" + activePlayer).textContent = "WINNER";
-      document.querySelector(".player-"+activePlayer+"-panel").classList.add("winner");
-      document.querySelector(".player-"+activePlayer+"-panel").classList.remove("active");
+      document
+        .querySelector(".player-" + activePlayer + "-panel")
+        .classList.add("winner");
+      document
+        .querySelector(".player-" + activePlayer + "-panel")
+        .classList.remove("active");
       document.getElementById("score-" + activePlayer).textContent =
-      scores[activePlayer];
+        scores[activePlayer];
       diceDom.style.display = "none";
-    }else{
+    } else {
       document.getElementById("score-" + activePlayer).textContent =
-      scores[activePlayer];
+        scores[activePlayer];
       toglogchiinEeljiigSolih();
     }
-  }else{
+  } else {
     alert("Тоглоом дууссан байна. NEW GAME товчийг дарж шинээр эхлэнэ үү!!");
   }
 });
 
-document.querySelector(".btn-new").addEventListener("click",function(){
+document.querySelector(".btn-new").addEventListener("click", function() {
   initGame();
   document.getElementById("name-0").textContent = "player 1";
   document.getElementById("name-1").textContent = "player 2";
   document.querySelector(".player-0-panel").classList.remove("active");
   document.querySelector(".player-1-panel").classList.remove("active");
-  document.querySelector(".player-"+activePlayer+"-panel").classList.add("active");
+  document
+    .querySelector(".player-" + activePlayer + "-panel")
+    .classList.add("active");
   document.querySelector(".player-0-panel").classList.remove("winner");
   document.querySelector(".player-1-panel").classList.remove("winner");
-})
+});
 
-function toglogchiinEeljiigSolih(){
+function toglogchiinEeljiigSolih() {
   // ene toglogchiin eeljin deer tsugluulsanonoog 0 bolgono
   document.getElementById("current-" + activePlayer).textContent = 0;
   roundScore = 0;
