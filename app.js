@@ -92,6 +92,12 @@ document.querySelector(".btn-new").addEventListener("click", function() {
   document.querySelector(".player-1-panel").classList.remove("winner");
 });
 
+document.querySelector(".btn-info").addEventListener("click", function() {
+  alert(
+    "Түрүүлж 100 оноо цуглуулсан нь ялна.\n Start game товчийг дарснаар тоглоом эхлэнэ.\n Role dice товчийг дарснаар шоо хаягдах бөгөөд туссан оноо нь CURRENT хэсэгт нэмэгдэх болно.Хэрэв та шоог 1 оноотой талбараар нь буулгавал CURRENT - ийн оноо 0 болно. Хэрэв та 1 буух магадлалтай болчихлоо гэж блдоод оноогоо авъя гэж бодвол HOLD товчийг дарсанаар таны оноо хадгалагдаж үлдэх болно!!! \n\n\n\t\t\t\t ****  Амжилт   **** "
+  );
+});
+
 function toglogchiinEeljiigSolih() {
   // ene toglogchiin eeljin deer tsugluulsanonoog 0 bolgono
   document.getElementById("current-" + activePlayer).textContent = 0;

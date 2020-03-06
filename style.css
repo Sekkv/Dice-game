@@ -151,6 +151,10 @@ i {
   top: 467px;
 }
 
+.btn-info {
+  top: 530px;
+}
+
 .dice {
   position: absolute;
   left: 50%;
