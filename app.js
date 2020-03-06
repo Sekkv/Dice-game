@@ -34,7 +34,7 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     diceDom.style.display = "block";
 
     // buusan sanamsargui toond hargalzah shaani zurgiig web deer gargaj irne.
-    diceDom.src = "dice-" + diceNumber + ".png";
+    diceDom.src = "Dice-" + diceNumber + ".png";
 
     // buusan too n 1 ees ylgaatai bol idehtei toglogchiin eeljiiin onoog nemegduulne.
     if (diceNumber !== 1) {
