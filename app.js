@@ -57,7 +57,7 @@ document.querySelector(".btn-hold").addEventListener("click", function() {
   if (isNewGame) {
     scores[activePlayer] = scores[activePlayer] + roundScore;
     // hojson esehioig shalgah
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 50) {
       isNewGame = false;
       document.getElementById("name-" + activePlayer).textContent = "WINNER";
       document
