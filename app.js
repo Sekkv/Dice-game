@@ -123,7 +123,7 @@ function computer() {
     }
     setTimeout(() => {
       if (computerSelect) computer();
-    }, 3000);
+    }, 2500);
   } else {
     scores[activePlayer] = scores[activePlayer] + roundScore;
     document.getElementById("score-" + activePlayer).textContent =
